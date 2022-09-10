@@ -6,15 +6,14 @@ import json
 import sys
 sys.path.append('Method/News')
 import News
-import time
+
+print("Bot: Start!")
 
 def start_command(update: Update, context: CallbackContext) -> None:
-  update.message.reply_text("Bot: Start!")
-  time.sleep(2)
   update.message.reply_text(f'Hi {update.effective_user.last_name}')
 
 def help_command(update: Update, context: CallbackContext):
-  update.message.reply_text("What can I help you? \n 1. Read the paper -> /news <amount> \n 2. /exit or /end --> Stop!")
+  update.message.reply_text("What can I help you? \n 1. Read the paper -> /news <amount> \n 2. Stop! --> /end or /exit \n 3. LICENSE --> /license")
 
 def news_command(update: Update, context: CallbackContext):
   try:
@@ -27,8 +26,8 @@ def news_command(update: Update, context: CallbackContext):
   except (IndexError, ValueError):
     update.message.reply_text('None!')
 
-def end_command(update: Update, content: CallbackContext): # exit Function
-  update.message.reply_text("Bot: End")
+def end_command(update: Update, content: CallbackContext):  # exit Function
+  print("Bot exit with 0")
   exit(0)
 
 def license_command(update: Update, content: CallbackContext):
