@@ -31,6 +31,12 @@ def end_command(update: Update, content: CallbackContext): # exit Function
   update.message.reply_text("Bot: End")
   exit(0)
 
+def license_command(update: Update, content: CallbackContext):
+  update.message.reply_text("This is LICENSE")
+  update.message.reply_text("https://github.com/heckerweb/TelegramBot/blob/main/LICENSE")
+
+
+
 def handle_message(update: Update, context: CallbackContext):
   text = str(update.message.text).lower()
   response = R.sample_response(text)
@@ -48,6 +54,7 @@ def main():
   dp.add_handler(CommandHandler("news", news_command))
   dp.add_handler(CommandHandler("end", end_command))
   dp.add_handler(CommandHandler("exit", end_command))
+  dp.add_handler(CommandHandler("license", license_command))
   dp.add_handler(MessageHandler(Filters.text, handle_message))
   dp.add_error_handler(error)
 
