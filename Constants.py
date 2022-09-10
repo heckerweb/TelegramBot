@@ -1,1 +1,1 @@
-API_KEY = 'Your Bot API_KEY'
+API_KEY = 'Bot API_KEY'
