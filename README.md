@@ -1,4 +1,4 @@
-# TelegramBot | JOKER x VnExpress
+# TelegramBot | Box
 My telegram bot using Python
 
 My Public Bot: https://t.me/sky2681_bot 
